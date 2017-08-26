@@ -26,7 +26,7 @@ if ($_POST['email'] !== $_POST['email-confirm'])
 	exit_message('The email and confirmation email do not match');
 }
 
-if (strlen($_POST['password']) < 8)
+if (strlen($_POST['password']) < 6)
 {
 	exit_message('Please enter a longer password (8 characters minimum)');
 }

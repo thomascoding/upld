@@ -1,0 +1,39 @@
+version: '2.2'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    volumes_from:
+      - mspic
+    container_name: nginx
+    links:
+      - mspic
+    depends_on:
+      - mspic
+    restart: always
+
+  mspic:
+    image: chialab/php:5.6-fpm
+    ports:
+      - 9000:9000
+    volumes:
+      - ${PWD}/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ${PWD}/php/php.ini:/usr/local/etc/php/php.ini
+      - ${PWD}/public:/var/www/html/
+    container_name: mspic
+    restart: always
+
+  mspic_db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${PWD}/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: upld
+    container_name: mspic_db
+    restart: always

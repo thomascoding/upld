@@ -16,6 +16,8 @@ define('VIEW_URL', 'http://' . MAIN_SITE_URL . MAIN_SCRIPT_PATH . VIEW_PATH);
 
 define('IMAGES_URL', 'http://' . (FRIENDLY_URLS ? 'i.' : '') . MAIN_SITE_URL . (FRIENDLY_URLS ? '' : MAIN_SCRIPT_PATH . 'images/'));
 
+define('SMALL_IMAGES_URL', 'http://' . (FRIENDLY_URLS ? 'i.' : '') . MAIN_SITE_URL . (FRIENDLY_URLS ? '' : MAIN_SCRIPT_PATH . 'small/'));
+
 define('IN_SCRIPT', true);
 
 function exit_message($message)

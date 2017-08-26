@@ -1,8 +1,10 @@
 <?php
 
-define('SITE_NAME', 'yoursite.com'); // site name displayed in the header and FAQ/ToS
+error_reporting(E_ALL);
 
-define('SITE_URL', 'admin@email.com'); // the domain ONLY for your site (i.e. without the "upld" folder)
+define('SITE_NAME', 'MousePic'); // site name displayed in the header and FAQ/ToS
+
+define('SITE_URL', 'localhost'); // the domain ONLY for your site (i.e. without the "upld" folder)
 define('SCRIPT_PATH', ''); // folder where the script is located (leave blank if it's in the root directory)
 
 // email for contact page
@@ -14,9 +16,9 @@ define('REPORT_EMAIL', 'reports@yoursite.com'); // where emails should be sent i
 // WARNING: ONLY enable this if you have configured your webserver to rewrite URLs - see INSTALL.txt
 define('FRIENDLY_URLS', false);
 
-define('DB_SERVER', 'localhost');
-define('DB_USER', 'username');
-define('DB_PASS', 'password');
+define('DB_SERVER', 'mspic_db');
+define('DB_USER', 'root');
+define('DB_PASS', '1');
 define('DB_NAME', 'upld');
 define('DB_PORT', 3306); // usually 3306 by default. If you don't know what this is, leave it alone and ask your hosting company if it doesn't work
 
@@ -24,7 +26,7 @@ define('DB_PORT', 3306); // usually 3306 by default. If you don't know what this
 define('ALLOW_REMOTE', true);
 
 // max size in bytes - remember that you might need to change this in your PHP config file too
-define('ALLOWED_SIZE', 2000000); // 1000 = 1 kilobyte, 1000000 = 1 megabyte
+define('ALLOWED_SIZE', 12000000); // 1000 = 1 kilobyte, 1000000 = 1 megabyte
 
 // allow anonymous uploads? set to 0 false to only allow logged in members to upload
 define('ANON_UPLOADS', true);

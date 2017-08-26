@@ -1,9 +1,8 @@
 <?php
 
-if (!defined('IN_SCRIPT'))
-{
-	header('location: ../index.php');
-	exit;
+if (!defined('IN_SCRIPT')) {
+    header('location: ../index.php');
+    exit;
 }
 
 ?>
@@ -11,51 +10,53 @@ if (!defined('IN_SCRIPT'))
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo SITE_NAME; ?></title>
-	<link href="css/upload.css" rel="stylesheet" type="text/css" />
+    <title><?php echo SITE_NAME; ?></title>
+    <link href="css/upload.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
 
-	<div id="header">
+<div id="header">
 
-		<ul id="navbar">
+    <ul id="navbar">
 
-			<!-- need to use a dirty hack here to avoid whitespace in between navbar buttons  -->
+        <!-- need to use a dirty hack here to avoid whitespace in between navbar buttons  -->
 
-			<li><a href="index.php">upload</a></li><!--
-
-<?php
-
-if (isset($_SESSION['user']))
-{
-
-?>
-
-			--><li><a href="account.php">my account</a></li><!--
-			--><li><a href="logout.php">logout</a></li>
+        <li><a href="index.php">upload</a></li><!--
 
 <?php
 
-}
-else
-{
+        if (isset($_SESSION['user']))
+        {
 
-?>
+        ?>
 
-			--><li><a href="login.php">login</a></li><li><a href="register.php">register</a></li>
+			-->
+        <li><a href="account.php">my account</a></li><!--
+			-->
+        <li><a href="logout.php">logout</a></li>
 
-<?php
+        <?php
 
-}
+        } else {
 
-?>
+            ?>
 
-		</ul>
+            -->
+            <li><a href="login.php">login</a></li>
+            <li><a href="register.php">register</a></li>
 
-		<div id="logo"><?php echo SITE_NAME; ?></div>
+            <?php
 
-	</div>
+        }
 
-	<div id="main">
+        ?>
+
+    </ul>
+
+    <div id="logo"><a href="/"><img height="40" src="/images/logo.png"></a></div>
+
+</div>
+
+<div id="main">
 
